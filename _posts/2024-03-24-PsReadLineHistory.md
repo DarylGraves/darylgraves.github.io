@@ -1,14 +1,14 @@
 ---
-title: Enabling Command Suggestions in the PowerShell Terminal
+title: Enabling Predictive-Intellisense in the PowerShell Terminal
 date: 2024-03-24 00:00:00 -000
 categories: [powershell, essentials]
 tags: [powershell, psreadline]
 ---
 
-Enabling suggestions with the PsReadLine module is an absolute must-have for any PowerShell user. With this enabled, commands you have previously entered will appear as suggestions whilst you type. Great for when you often find yourself running the same lines of code again and again!
+Enabling Predictive-Intellisense suggestions with the PsReadLine module is something every PowerShell user should try. With this enabled, commands you have previously entered will appear as suggestions whilst you type. Great for when you often find yourself running the same lines of code again and again!
 
 ![PsReadLine Example](assets/img/BlogPosts/PsReadLineHistoryExample.gif)
-*Note how just typing one letter shows suggestions from things I've previously ran!*
+*Note how just typing one letter shows suggestions I've previously entered*
 
 ## Prerequisites
 - Windows PowerShell 5.1 or PowerShell 7 and above
@@ -40,12 +40,6 @@ That's it! The more you use PowerShell, the more suggestions will start appearin
 Behind the scenes, the PsReadLine module is saving a history of your commands to a text file. You can find the location of this file by entering `(Get-PsReadLineOption).HistorySavePath` into your terminal.
 
 It's worth noting that this text file is in plain-text so can be easily read or modified. PsReadLine knows not to save some commands (such as `ConvertTo-SecureString`) but it's worth reviewing this file on occasion to make sure nothing sensitive has slipped through the net.
-
-## Alternative Options
-If you're not a fan of the list of suggestions popping up (it can be a bit jarring!) you may prefer adding the below into your profile instead. This will suggest a previous command on the same line as you're typing:
-```powershell
-Set-PsReadLineOption -PredictionViewStyle InlineView
-```
 
 ## Troubleshooting Errors
 - The above is tried and tested on Windows but _should_ work on Linux/Mac, you will just need to edit your profile with your preferred text editor instead.
