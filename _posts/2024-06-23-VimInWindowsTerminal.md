@@ -27,6 +27,7 @@ function vi {
         & "C:\Program Files\Vim\vim90\vim.exe" $args && echo "`e[5 q"
 }
 ```
+
 - Save and close the file in Notepad.
 - If you're not already in your user directory, navigate there (typically c:\users\yourname) and then run the below:
 ```powershell
