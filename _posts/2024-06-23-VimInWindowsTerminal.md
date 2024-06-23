@@ -1,6 +1,6 @@
 ---
 title: Fixing the Vim Cursor in Windows Terminal
-date: 2024-06-24 00:00:00 -000
+date: 2024-06-23 00:00:00 -000
 categories: [vim, windowsterminal]
 tags: [vim, windowsterminal]
 ---
