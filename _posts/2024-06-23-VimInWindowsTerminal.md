@@ -18,6 +18,7 @@ Notepad $Profile
 - Notepad should now open (if Notepad warns you that the file doesn't exist, say yes to the prompt to create the file).
 
 - Copy-paste the below code into Notepad (you made need to tweak the paths to the location of your executable!)
+
 ```powershell
 function vim {
         & "C:\Program Files\Vim\vim90\vim.exe" $args && echo "`e[5 q"
