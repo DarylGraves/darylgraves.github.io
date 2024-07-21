@@ -5,9 +5,9 @@ categories: [powershell, Discord, REST, api]
 tags: [powershell, Discord, api, REST]
 ---
 
-I recently configured IFTTT to send me a Discord message when a backup successfully completed as it saves the file to my Google Drive storage. This got me thinking about how I could use Discord as a central hub for all my automation and homelab alerts since I naturally use it everyday.
+I recently configured IFTTT to send me a Discord message when a backup successfully completed  and it got me thinking about how I could use Discord as a central hub for all my automation and homelab alerts since I naturally check it everyday.
 
-The following is a quick guide on how to get this working - We cover how to create a simple application which allows you to send messages to a channel via REST API. This guide does not cover how to create interactive bots that can respond to messages.
+This article is a quick guide on how to set up a Bot in Discord and then how to use it to send messages from a PowerShell script using the REST API. This guide does not cover how to create interactive bots that can respond to messages.
 
 ![PsReadLine Example](assets/img/BlogPosts/MessageToDiscord.gif)
 *POST Request to Discord API*
@@ -81,6 +81,12 @@ else {
 }
 
 ```
+## How does this work?
+- In lines 1 - 10 we are configuring all the variables. That is, the things which might change.
+- In lines 12 - 17 we are creating the HTTP Headers, this includes adding the Bot's token for authorisation and confirming the payload we are about to send will be JSON.
+- In lines 19 - 22 we are creating a hashtable of the message we wish to send and then converting it to JSON
+- In line 24 we send the request.
+- The remaining lines will print back to your terminal if your message was successfully accepted by Discord or if it was rejected.
 
 ## Use Cases
 This can be used for a variety of scheduled task or cron jobs. As an example, I have an Active Directory domain for testing which runs on the default 180 day trial license. As I use it infrequently I sometimes forget to re-arm the license in tme so I am using the below version of the script to remind me when I have less than a month remaining on my trial:
