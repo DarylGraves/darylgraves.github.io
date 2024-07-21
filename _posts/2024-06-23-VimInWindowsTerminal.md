@@ -2,8 +2,8 @@
 title: Fixing the Vim Cursor in Windows Terminal
 date: 2024-06-23 00:00:00 -000
 image: assets/img/BlogPosts/VimIcon.png
-categories: [vim, windowsterminal]
-tags: [vim, windowsterminal]
+categories: [Vim, Windows Terminal]
+tags: [Vim, Windows Terminal]
 ---
 
 If you've ever tried to use Vim in Windows Terminal you may have found that the cursor formatting doesn't work. Here's how to fix.
