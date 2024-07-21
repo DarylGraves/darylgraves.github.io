@@ -2,8 +2,8 @@
 title: Sending Discord Messages from PowerShell
 date: 2024-07-21 00:00:00 -000
 image: assets/img/BlogPosts/DiscordIcon.png
-categories: [powershell, Discord, REST, api]
-tags: [powershell, Discord, api, REST]
+categories: [powershell, Discord, api]
+tags: [powershell, Discord, api]
 ---
 
 I recently configured IFTTT to send me a Discord message when a backup successfully completed  and it got me thinking about how I could use Discord as a central hub for all my automation and homelab alerts since I naturally check it everyday.
