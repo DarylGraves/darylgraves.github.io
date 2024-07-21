@@ -6,10 +6,10 @@ categories: [PowerShell, Essentials]
 tags: [PowerShell, PSReadLine]
 ---
 
-Enabling Predictive-Intellisense suggestions with the PsReadLine module is something every PowerShell user should try. With this enabled, commands you have previously entered will appear as suggestions whilst you type. Great for when you often find yourself running the same lines of code again and again!
+Enabling Predictive-Intellisense allows commands you have previously entered to appear as suggestions whilst you type. Great for when you often find yourself repeating the same one-liners of code again and again.
 
 ![PsReadLine Example](assets/img/BlogPosts/PsReadLineHistoryExample.gif)
-*Note how just typing one letter shows suggestions I've previously entered*
+*Note how just typing one letter shows suggestions from my terminal history*
 
 ## Prerequisites
 - Windows PowerShell 5.1 or PowerShell 7 and above
