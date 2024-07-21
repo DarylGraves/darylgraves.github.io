@@ -46,7 +46,7 @@ The following is a quick guide on how to get this working - We cover how to crea
 
 - Finally, use this script as your template. Now you need to replace "PLACEHOLDER" with your details:
 
-```PowerShell
+```powershell
 # Define the necessary variables
 $ChannelId = "PLACEHOLDER" # Place your Channel Id here
 $BotToken = "PLACEHOLDER" # Place your Bot Token here
@@ -85,7 +85,7 @@ else {
 ## Use Cases
 This can be used for a variety of scheduled task or cron jobs. As an example, I have an Active Directory domain for testing which runs on the default 180 day trial license. As I use it infrequently I sometimes forget to re-arm the license in tme so I am using the below version of the script to remind me when I have less than a month remaining on my trial:
 
-```PowerShell
+```powershell
 # Define the necessary variables
 $ChannelId = "PLACEHOLDER" # Place your Channel Id here
 $BotToken = "PLACEHOLDER" # Place your Bot Token here
@@ -123,13 +123,13 @@ A more secure way to handle secrets on a Windows machine is to change the token 
 
 This does mean if your script is going to run your scheduled task as SYSTEM, you also need to create the XML file as SYSTEM first.
 
-```PowerShell
+```powershell
 $apiToken = "your_api_token_here"
 $apiToken | ConvertTo-SecureString -AsPlainText -Force | Export-Clixml -Path "path\to\your\securetoken.xml"
 ```
 
 In the code you can then run the following to collect the token:
-```PowerShell
+```powershell
 $secureToken = Import-Clixml -Path "path\to\your\securetoken.xml"
 $apiToken = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secureToken))
 ```
