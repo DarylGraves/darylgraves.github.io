@@ -33,7 +33,7 @@ This article is a quick guide on how to set up a Bot in Discord and then how to 
 
 - You should now see the Bot as a user in your channel.
 
-## Sending Your Message
+## Getting the Variables
 - First make a copy of the Channel ID you wish to send your message to. This is found easily by going to the web version of Discord and parsing the URL.
 
 ![Where to Find the URL](assets/img/BlogPosts/Discord-Url.png)
@@ -44,7 +44,8 @@ This article is a quick guide on how to set up a Bot in Discord and then how to 
 
 ![Copy Token](assets/img/BlogPosts/Discord-CopyToken.png)
 
-- Finally, use this script as your template. Now you need to replace "PLACEHOLDER" with your details:
+## The Code
+- Use this script as your template. Note you need to replace "PLACEHOLDER" with your details:
 
 ```powershell
 # Define the necessary variables
@@ -89,7 +90,7 @@ else {
 - The remaining lines will print back to your terminal if your message was successfully accepted by Discord or if it was rejected.
 
 ## Use Cases
-This can be used for a variety of scheduled task or cron jobs. As an example, I have an Active Directory domain for testing which runs on the default 180 day trial license. As I use it infrequently I sometimes forget to re-arm the license in tme so I am using the below version of the script to remind me when I have less than a month remaining on my trial:
+This can be used for a variety of scheduled task or cron jobs. As an example, I have an Active Directory domain which I use to test concepts and this runs with a 180 day trial license. Since it is used infrequently I sometimes forget to re-arm the license in time so I am using the below to remind me when I have less than a month remaining on the trial:
 
 ```powershell
 # Get the days remaining of the license
