@@ -1,6 +1,7 @@
 ---
 title: Enabling Predictive-Intellisense in the PowerShell Terminal
 date: 2024-03-24 00:00:00 -000
+image: assets/img/BlogPosts/MatrixIcon.png
 categories: [powershell, essentials]
 tags: [powershell, psreadline]
 ---
