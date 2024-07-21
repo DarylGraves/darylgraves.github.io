@@ -1,6 +1,7 @@
 ---
 title: Sending Discord Messages from PowerShell
 date: 2024-07-21 00:00:00 -000
+image: assets/img/BlogPosts/DiscordIcon.png
 categories: [powershell, Discord, REST, api]
 tags: [powershell, Discord, api, REST]
 ---
