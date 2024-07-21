@@ -52,7 +52,7 @@ $ChannelId = "PLACEHOLDER" # Place your Channel Id here
 $BotToken = "PLACEHOLDER" # Place your Bot Token here
 $ClientName = "PLACEHOLDER" # The Name of your bot
 $ClientVersion = "1.0"
-$LicenseExpiryInDays = [math]::Floor((Get-WmiObject -Query "SELECT * FROM SoftwareLicensingProduct WHERE ApplicationID='55c92734-d682-4d71-983e-d6ec3f16059f'").graceperiodremaining / 1440)
+$Message = "Hello, World!" # Your message here
 
 # Define the URL for the API endpoint
 $Url = "https://discord.com/api/v10/channels/$ChannelId/messages"
