@@ -92,33 +92,31 @@ else {
 This can be used for a variety of scheduled task or cron jobs. As an example, I have an Active Directory domain for testing which runs on the default 180 day trial license. As I use it infrequently I sometimes forget to re-arm the license in tme so I am using the below version of the script to remind me when I have less than a month remaining on my trial:
 
 ```powershell
-# Define the necessary variables
-$ChannelId = "PLACEHOLDER" # Place your Channel Id here
-$BotToken = "PLACEHOLDER" # Place your Bot Token here
-$ClientName = "PLACEHOLDER" # The Name of your bot
-$ClientVersion = "1.0"
+# Get the days remaining of the license
 $LicenseExpiryInDays = [math]::Floor((Get-WmiObject -Query "SELECT * FROM SoftwareLicensingProduct WHERE ApplicationID='55c92734-d682-4d71-983e-d6ec3f16059f'").graceperiodremaining / 1440)
 
+# Only send an email if less than 31 days remaining.
 if($LicenseExpiryInDays -lt 31)
 {
-    $Message = "$($Env:ComputerName) has $LicenseExpiryInDays days remaining on its Windows trial license. You need to re-arm or potentially rebuild."
-    # Define the URL for the API endpoint
+    $ChannelId = "PLACEHOLDER" 
+    $BotToken = "PLACEHOLDER" 
+    $ClientName = "PLACEHOLDER" 
+    $ClientVersion = "1.0"
     $Url = "https://discord.com/api/v10/channels/$ChannelId/messages"
 
-    # Create the header with the bot token and user agent
+    $Message = "$($Env:ComputerName) has $LicenseExpiryInDays days remaining on its Windows trial license. You need to re-arm or potentially rebuild."
+
     $Headers = @{
         Authorization  = "Bot $BotToken"
         "Content-Type" = "application/json"
         "User-Agent"   = "$ClientName ($ClientVersion)"
     }
 
-    # Create the payload with the message content
     $Payload = @{
         content = $Message
     } | ConvertTo-Json
 
-    # Send the POST request to the Discord API
-    $response = Invoke-RestMethod -Uri $Url -Method Post -Headers $Headers -Body $Payload
+    Invoke-RestMethod -Uri $Url -Method Post -Headers $Headers -Body $Payload
 }
 ```
 
