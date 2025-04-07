@@ -18,13 +18,18 @@ Quick Actions is a lesser-known but powerful feature of Outlook you can incorpor
 
 The problem is in the new Outlook, you can no longer use Ctrl+Shift+1, 2, 3 or 4 for Quick Actions. That's fine for new users, but if you've spent years using those shortcuts, it's a big disruption.
 
+![The Claw](assets/img/BlogPosts/TheClaw.jpg)
+*My hand is locked into this shape. Ctrl+Shift+5 is just awkward!*
+
 ## Code
 The below code can be used with [Auto Hot Key](https://www.autohotkey.com/) to redirect Ctrl+Shift+1 to Ctrl+Shift+5, 2 to 6 and 3 to 7:
+
 ```AHK
 ^+1::Send("^+5")
 ^+2::Send("^+6")
 ^+3::Send("^+7")
 ```
+
 ### Configuring Auto Hot Key
 After installing Auto Hot Key, you can run the above code by saving the text into a file with the `.ahk` extension.
 
