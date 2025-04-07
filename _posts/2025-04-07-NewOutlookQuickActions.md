@@ -38,7 +38,7 @@ To immediately have this code run when you log into your machine:
 - Enter `Shell:Startup` and push enter
 - Copy/Save the .ahk file here.
 
-[Shell Startup](assets/img/BlogPosts/RunShellStartup.png)
+![Shell Startup](assets/img/BlogPosts/RunShellStartup.png)
 
 The `Shell:Startup` folder is a user-specific folder. Anything in this location will run when you loginto your machine.
 
