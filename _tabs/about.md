@@ -5,7 +5,7 @@ order: 4
 ---
 
 ## Quick Summary
-Thirty-something IT Professional with a variety of experience across various Microsoft technologies. I am passionate about continuous-learning, new technologies and sharing my knowledge with others. 
+Thirty-something IT Professional with a variety of experience across various Microsoft technologies. I am passionate about continuous-learning, new technologies and sharing knowledge with others. 
 
 I enjoy automating solutions and use PowerShell as my weapon of choice. Recently I have transitioned from a SysAdmin role to become a Cloud Engineer where I spend most of my time designing, implementing and maintaining a wide range of environments in Microsoft Azure.
 

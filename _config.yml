@@ -16,7 +16,7 @@ timezone: Europe/London
 
 title: Tech Bits # the main title
 
-tagline: Cloud Engineer / SysAdmin. Lover of automation, video games and guitars. # it will display as the sub-title
+tagline: IT Blog from a Cloud Engineer / SysAdmin. # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
