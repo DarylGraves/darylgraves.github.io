@@ -24,7 +24,7 @@ The problem is in the new Outlook, you can no longer use Ctrl+Shift+1, 2, 3 or 4
 ## Code
 The below code can be used with [Auto Hot Key](https://www.autohotkey.com/) to redirect Ctrl+Shift+1 to Ctrl+Shift+5, 2 to 6 and 3 to 7:
 
-```AHK
+```
 ^+1::Send("^+5")
 ^+2::Send("^+6")
 ^+3::Send("^+7")
