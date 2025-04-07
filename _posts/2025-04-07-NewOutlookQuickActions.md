@@ -40,7 +40,7 @@ To immediately have this code run when you log into your machine:
 
 ![Shell Startup](assets/img/BlogPosts/RunShellStartup.png)
 
-The `Shell:Startup` folder is a user-specific folder. Anything in this location will run when you loginto your machine.
+The `Shell:Startup` folder is a user-specific folder. Anything in this location will run when you login to your machine.
 
 ## Would you like to Know More?
 This just scratches the surface of what AHK can do. You can check out my personal (and growing) AHK file [here](https://github.com/DarylGraves/dotfiles/blob/main/AppData/Roaming/Microsoft/Windows/readonly_Start%20Menu/readonly_Programs/readonly_Startup/MoveWindowFocus.ahk).
