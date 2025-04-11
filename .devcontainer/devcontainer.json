@@ -12,7 +12,17 @@
   // "forwardPorts": [],
 
   // Uncomment the next line to run commands after the container is created.
-  "postCreateCommand": "bundle exec jekyll serve --livereload --force_polling"
+  "postCreateCommand": "bundle exec jekyll serve --livereload --force_polling",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.theme-check-vscode",
+        "killalau.vscode-liquid-snippets",
+        "stylelint.vscode-stylelint",
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
 
   // Configure tool-specific properties.
   // "customizations": {},
