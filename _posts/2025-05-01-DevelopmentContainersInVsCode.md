@@ -1,13 +1,11 @@
 ---
 title: Dev Containers in VsCode
-description: There's no need to install dependancies locally when VsCode can connect to Docker Containers!
 date: 2025-05-01 00:00:00 -000
 image: assets/img/BlogPosts/VsCodeIcon.png
-categories: [Dev]
+categories: [VsCode, Docker, Dev]
 tags: [VsCode, Docker, Dev]
 ---
 
-# Overview
 Picture this all-to-familiar scenario: You join a new company as a developer and spend your first week chasing IT to get all your dependancies installed before you can even start writing code. Hopefully you're already using Docker containers for your dev databases... But did you know about **Dev Containers**?
 
 Dev Containers are a feature in VsCode that streamline your development environment. If you choose to run a Dev Container, VsCode will prompt you to choose a Docker Image. It will then download this image, run it as a container and mount your repository folder inside it. You still write your code in VsCode as usual - but now with access to all the tools inside the container. 
