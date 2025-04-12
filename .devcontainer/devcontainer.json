@@ -16,7 +16,6 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "Shopify.theme-check-vscode",
         "killalau.vscode-liquid-snippets",
         "stylelint.vscode-stylelint",
         "yzhang.markdown-all-in-one"
@@ -30,3 +29,4 @@
   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
   // "remoteUser": "root"
 }
+
