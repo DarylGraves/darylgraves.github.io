@@ -13,6 +13,7 @@ I enjoy automating solutions and use PowerShell as my weapon of choice. Recently
 *Focusing on the Cloud*
 
 ## Certifications
+- [Microsoft Certified: Azure Solutions Architect Expert](https://learn.microsoft.com/en-gb/users/darylgraves/credentials/ec8b2326e48ba560?ref=https%3A%2F%2Fwww.linkedin.com%2F) (Dec 2024)
 - [Microsoft Certified: Identity and Access Administrator Associate](https://learn.microsoft.com/en-gb/users/darylgraves/credentials/eb451b88576eebf) (Sep 2023)
 - [Microsoft Certified: Security, Compliance, and Identity Fundamentals](https://learn.microsoft.com/en-gb/users/darylgraves/credentials/a5ccaab79ecdfcaf) (Aug 2023)
 - [Microsoft Certified: Azure Administrator Associate](https://learn.microsoft.com/en-gb/users/darylgraves/credentials/4ff265d6f146263f) (Mar 2023)
