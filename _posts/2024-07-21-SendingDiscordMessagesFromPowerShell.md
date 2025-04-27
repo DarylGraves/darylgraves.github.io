@@ -1,8 +1,9 @@
 ---
 title: Sending Discord Messages from PowerShell
+description: How to use the Discord API to send messages to your channel.
 date: 2024-07-21 00:00:00 -000
 image: assets/img/BlogPosts/DiscordIcon.png
-categories: [PowerShell, Discord, API]
+categories: [Fun]
 tags: [PowerShell, Discord, API]
 ---
 

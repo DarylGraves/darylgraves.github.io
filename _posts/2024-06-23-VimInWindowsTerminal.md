@@ -1,8 +1,9 @@
 ---
 title: Fixing the Vim Cursor in Windows Terminal
+description: Out of the box, Vim's cursor renders funny in Windows Terminal, here's a fix.
 date: 2024-06-23 00:00:00 -000
 image: assets/img/BlogPosts/VimIcon.png
-categories: [Vim, Windows Terminal]
+categories: [Dev]
 tags: [Vim, Windows Terminal]
 ---
 
