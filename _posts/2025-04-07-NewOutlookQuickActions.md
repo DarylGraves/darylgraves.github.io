@@ -1,8 +1,9 @@
 ---
 title: Using AHK to fix New Outlook Quick Actions
+description: New Outlook doesn't support Ctrl+Shift+1-3 for Quick Steps! Here's a workaround using AHK.
 date: 2025-04-07 00:00:00 -000
 image: assets/img/BlogPosts/OutlookIcon.png
-categories: [Office 365, Outlook]
+categories: [Productivity]
 tags: [Office 365, Outlook]
 ---
 

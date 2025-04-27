@@ -1,10 +1,13 @@
 ---
 title: Enabling Predictive-Intellisense in the PowerShell Terminal
+description: Make PowerShell suggest previous things you've typed!
 date: 2024-03-24 00:00:00 -000
 image: assets/img/BlogPosts/MatrixIcon.png
-categories: [PowerShell, Essentials]
+categories: [Productivity, Automation]
 tags: [PowerShell, PSReadLine]
 ---
+
+# Overview
 
 Enabling Predictive-Intellisense allows commands you have previously entered to appear as suggestions whilst you type. Great for when you often find yourself repeating the same one-liners of code again and again.
 
