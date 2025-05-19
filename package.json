@@ -30,10 +30,10 @@
     "@rollup/plugin-terser": "^0.4.4",
     "husky": "^9.1.7",
     "rimraf": "^6.0.1",
-    "rollup": "^4.40.2",
+    "rollup": "^4.41.0",
     "rollup-plugin-license": "^3.6.0",
     "stylelint": "^16.19.1",
-    "stylelint-config-standard-scss": "^15.0.0"
+    "stylelint-config-standard-scss": "^15.0.1"
   },
   "prettier": {
     "trailingComma": "none"
