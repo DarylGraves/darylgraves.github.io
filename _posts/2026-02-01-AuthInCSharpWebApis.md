@@ -253,3 +253,144 @@ app.MapControllers();
 
 app.Run();
 ```
+
+## Troubleshooting
+My app broke when I changed the App Registration to trust users from my Tenant to any Tenant! To get round this AI told me to add this to support all tenants:
+
+```csharp
+// This bit was already here - Just to show you where to put hte below
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+.AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("Entra"));
+
+// This bit is the new bit which tells it to trust all these URLs:
+builder.Services.Configure<MicrosoftIdentityOptions>(options =>
+{
+    options.Authority = "https://login.microsoftonline.com/common/v2.0";
+    options.TokenValidationParameters.ValidIssuers = new[]
+    {
+        "https://login.microsoftonline.com/common/v2.0",
+        "https://login.microsoftonline.com/{tenantid}/v2.0",
+        "https://sts.windows.net/{tenantid}/"
+    };
+    options.TokenValidationParameters.ValidAudience = clientId;
+});
+```
+## Full Example of Program.cs for Multi Tenants:
+```csharp
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Identity.Web;
+using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using Infrastructure.Data;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// AppSettings.Json
+var projectName = builder.Configuration["Project:Name"];
+var clientId = builder.Configuration["Entra:ClientId"];
+var tenantId = builder.Configuration["Entra:TenantId"];
+var scope = $"api://{clientId}/BackendApi";
+
+var connectionString = builder.Configuration.GetConnectionString(builder.Environment.EnvironmentName);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddDbContext<AppDbContext>(options => options.UseNpgsql(connectionString));
+
+// Swagger
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo { Title = $"{projectName} API", Version = "v1" });
+
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.OAuth2,
+        Flows = new OpenApiOAuthFlows
+        {
+            AuthorizationCode = new OpenApiOAuthFlow
+            {
+                AuthorizationUrl = new Uri($"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/authorize"),
+                TokenUrl = new Uri($"https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token"),
+                Scopes = new Dictionary<string, string>
+                {
+                    { scope, $"Access {projectName} API" }
+                }
+            }
+        }
+    });
+
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "oauth2"
+                }
+            },
+            new[] { scope }
+        }
+    });
+});
+
+// Auth
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("Entra"));
+
+// Allow multi-tenant issuer validation
+builder.Services.Configure<MicrosoftIdentityOptions>(options =>
+{
+    options.Authority = "https://login.microsoftonline.com/common/v2.0";
+    options.TokenValidationParameters.ValidIssuers = new[]
+    {
+        "https://login.microsoftonline.com/common/v2.0",
+        "https://login.microsoftonline.com/{tenantid}/v2.0",
+        "https://sts.windows.net/{tenantid}/"
+    };
+    options.TokenValidationParameters.ValidAudience = clientId;
+});
+
+builder.Services.AddAuthorization();
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", $"{projectName} API v1");
+        options.OAuthClientId(clientId);
+        options.OAuthUsePkce();
+        options.OAuthScopeSeparator(" ");
+        options.DisplayOperationId();
+    });
+}
+
+app.UseHttpsRedirection();
+
+// Auth and Cors
+app.UseCors();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+```
