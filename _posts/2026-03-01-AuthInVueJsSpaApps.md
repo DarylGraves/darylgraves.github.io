@@ -12,7 +12,16 @@ I have literally lost the best part of two evenings trying to get Microsoft Auth
 
 It actually turned out to be a bug in the latest version of the `msal-browser` library... Instead of closing the popup window it was redirecting to my app in the tiny popup box... Once I downgraded to v4.13.0 it worked! But I still wanted to document this as there isn't much on the internet about how to set this up specifically for Vue.js and I keep forgetting everytime I start a new project!
 
-## Prerequisites
+## PrerequisitesuthInVueJsSpaApps (#58)
+￼
+d1b52bb
+ · 
+yesterday
+History
+.devcontainer
+2025 11 01 Adding Swagger to C Sharp API Projects (#46)
+4 months ago
+
 - An Entra App Registration
 - A Vue.js App with the following libraries:
   - pinia
@@ -28,7 +37,7 @@ In your Entra App Registration:
 
 ![Example Entra Redirect Url](../assets/img/BlogPosts/VuejsAuth-EntraRedirectUrl.png)
 
-- Sill under "Authentication", select the "Supported accounts" tab and choose the correct option for your use case:
+- Sill under "Authentication", select the "Supported accounts" tab and choose the correct option:
 
 ![Screenshot of Supported Accounts](../assets/img/BlogPosts/CSharpAuth-SupportedAccountTypes.png)
 *I use "Any Entra ID Tenant + Personal Microsoft accounts"*
